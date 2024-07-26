@@ -13,16 +13,43 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .zoomableImage {
+        transition: transform 0.3s ease; /* Smooth transition for zoom */
+        cursor: pointer; /* Pointer cursor to indicate it's clickable */
+        max-width: 100%; /* Ensure the image does not exceed the screen width */
+      }
+
+      .zoomableImage.zoomed {
+        transform: scale(1.5); /* Scale image */
+      }
+
+      /* Adjust scale for smaller screens */
+      @media (max-width: 600px) {
+        .zoomableImage.zoomed {
+          transform: scale(1.2); /* Smaller scale for smaller screens */
+        }
+      }
+
+      /* Adjust scale for larger screens */
+      @media (min-width: 1200px) {
+        .zoomableImage.zoomed {
+          transform: scale(2); /* Larger scale for larger screens */
+        }
+      }
+    </style>
   </head>
   <body class="is-preload">
     <!-- Header -->
     <section id="header">
       <header>
-        <span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+        <span class="image avatar"
+          ><img src="images/profile.jpg" alt=""
+        /></span>
         <h1 id="logo"><a href="#">Ronald Britos</a></h1>
         <p>
-          I got reprogrammed by a rogue AI<br />
-          and now I'm totally cray
+          Passionate Software Engineering.<br />
+          Expertise in Java, C#, and React.
         </p>
       </header>
       <nav id="nav">
@@ -75,19 +102,24 @@
           </div>
           <div class="container">
             <header class="major">
-              <h2>Read Only</h2>
+              <h2>About Me</h2>
               <p>
-                Just an incredibly simple responsive site<br />
-                template freebie by <a href="http://html5up.net">HTML5 UP</a>.
+                An enthusiastic programmer with a Bachellor's degree from Ensign
+                College.<br />
               </p>
             </header>
             <p>
-              Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus
-              col. Commodo id in arcu ante lorem ipsum sed accumsan erat
-              praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo.
-              Vis aliquet tortor ultricies non ante erat nunc integer eu ante
-              ornare amet commetus vestibulum blandit integer in curae ac
-              faucibus integer non. Adipiscing cubilia elementum.
+              Currently preparing to shape the future of software development by
+              gaining experience while working on exciting projects.<br /><br />
+              I have experience as a Software Engineering Intern at Motorola
+              Solutions and as a Software Engineer at the Church of Jesus
+              Christ. I am proficient in Java, C#, JavaScript, React, Node.js,
+              and more. I have held leadership roles, including President of the
+              SHPE – Ensign College Chapter.
+              <br /><br />
+              Thank you for taking the time to know more about me! Please
+              continue through the whole experience that I personally designed
+              for you.
             </p>
           </div>
         </section>
@@ -97,17 +129,29 @@
           <div class="container">
             <h3>Things I Can Do</h3>
             <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non. Adipiscing cubilia elementum
-              integer lorem ipsum dolor sit amet.
+              With a solid foundation in software engineering, I bring a diverse
+              set of skills to the table. Here are some of the things I excel
+              at:
             </p>
             <ul class="feature-icons">
-              <li class="icon solid fa-code">Write all the code</li>
-              <li class="icon solid fa-cubes">Stack small boxes</li>
-              <li class="icon solid fa-book">Read books and stuff</li>
-              <li class="icon solid fa-coffee">Drink much coffee</li>
-              <li class="icon solid fa-bolt">Lightning bolt</li>
-              <li class="icon solid fa-users">Shadow clone technique</li>
+              <li class="icon solid fa-code">
+                Develop robust Java applications and .NET applications
+              </li>
+              <li class="icon solid fa-laptop-code">
+                Create dynamic web interfaces with React and Node.js
+              </li>
+              <li class="icon solid fa-database">
+                Design and manage efficient databases
+              </li>
+              <li class="icon solid fa-cloud">
+                Utilize cloud technologies like AWS and Azure
+              </li>
+              <li class="icon solid fa-project-diagram">
+                Implement CI/CD pipelines for seamless deployment
+              </li>
+              <li class="icon solid fa-users-cog">
+                Lead and collaborate in Agile Scrum teams
+              </li>
             </ul>
           </div>
         </section>
@@ -117,44 +161,61 @@
           <div class="container">
             <h3>A Few Accomplishments</h3>
             <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non. Adipiscing cubilia elementum
-              integer. Integer eu ante ornare amet commetus.
+              Here are some projects I am working on and some of my past
+              accomplishments. I am always looking for new opportunities to
+              learn and grow as a software engineer.
             </p>
             <div class="features">
               <article>
-                <a href="#" class="image"
-                  ><img src="images/pic01.jpg" alt=""
-                /></a>
+                <a class="image">
+                  <video width="100%" height="auto" controls>
+                    <source
+                      src="images/DrawObjects-Ronald.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </a>
                 <div class="inner">
-                  <h4>Possibly broke spacetime</h4>
+                  <h4>The Wild West</h4>
                   <p>
-                    Integer eu ante ornare amet commetus vestibulum blandit
-                    integer in curae ac faucibus integer adipiscing ornare amet.
+                    This is how I started my journey in software engineering. I
+                    entirely designed and draw the objects in this video.I learn
+                    how to create classes, objects, and methods in Java.
                   </p>
                 </div>
               </article>
               <article>
-                <a href="#" class="image"
-                  ><img src="images/pic02.jpg" alt=""
+                <a class="image"
+                  ><img
+                    src="images/restaurant.jpg"
+                    alt="Restaurant App"
+                    class="zoomableImage"
+                    onclick="zoomImage(this)"
                 /></a>
                 <div class="inner">
-                  <h4>Terraformed a small moon</h4>
+                  <h4>Food is essential</h4>
                   <p>
-                    Integer eu ante ornare amet commetus vestibulum blandit
-                    integer in curae ac faucibus integer adipiscing ornare amet.
+                    In this project, I created a web application that allows the
+                    customer, to find the restaurant that match theirs health
+                    choices. I used React, Node.js, and MongoDB.
                   </p>
                 </div>
               </article>
               <article>
-                <a href="#" class="image"
-                  ><img src="images/pic03.jpg" alt=""
-                /></a>
+                <a class="image"
+                  ><img
+                    src="images/Music App.jpg"
+                    alt="Music App"
+                    class="zoomableImage"
+                    onclick="zoomImage(this)"
+                  />
+                </a>
                 <div class="inner">
-                  <h4>Snapped dark matter in the wild</h4>
+                  <h4>Gaming is the best</h4>
                   <p>
-                    Integer eu ante ornare amet commetus vestibulum blandit
-                    integer in curae ac faucibus integer adipiscing ornare amet.
+                    I created a music app that allows the user to find music,
+                    create playlists, and listen to music, from different
+                    sources. From local files to Spotify. I used C# .Net WPF, .
                   </p>
                 </div>
               </article>
@@ -166,12 +227,50 @@
         <section id="four">
           <div class="container">
             <h3>Contact Me</h3>
-            <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non. Adipiscing cubilia elementum
-              integer. Integer eu ante ornare amet commetus.
+            <p style="margin-bottom: 2%">
+              Please feel free to reach out to me for any inquiries or just to
+              say hi!
             </p>
-            <form method="post" action="#">
+            <ul class="icons" style="margin-bottom: 2%">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/ronaldmbritos"
+                  class="icon brands fa fa-linkedin"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/mijahilbritos/?next=%2F"
+                  class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/pesogrone"
+                  class="icon brands fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:ronaldmbritos@gmail.com"
+                  class="icon solid fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+              <li>
+                <a class="icon solid fa-phone" onclick="showPhoneNumber()">
+                  <span class="label">Phone</span></a
+                >
+              </li>
+            </ul>
+
+            <form
+              method="post"
+              action="https://formsubmit.co/ronaldmbritos@gmail.com"
+            >
               <div class="row gtr-uniform">
                 <div class="col-6 col-12-xsmall">
                   <input type="text" name="name" id="name" placeholder="Name" />
@@ -199,6 +298,10 @@
                     placeholder="Message"
                     rows="6"
                   ></textarea>
+                </div>
+                <div class="col-6 col-12-medium">
+                  <input type="checkbox" id="demo-copy" name="demo-copy" />
+                  <label for="demo-copy">Email me a copy of this message</label>
                 </div>
                 <div class="col-12">
                   <ul class="actions">
@@ -558,6 +661,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         </div>
       </section>
     </div>
+    <script>
+      function zoomImage(image) {
+        image.classList.toggle("zoomed");
+      }
+      function showPhoneNumber() {
+        alert("Phone: +1 385-267-8705");
+      }
+    </script>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>

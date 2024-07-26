@@ -3314,3 +3314,12 @@ input, select, textarea {
 			}
 
 	}
+/* zoom images */
+  #zoomableImage {
+	transition: transform 0.3s ease; /* Smooth transition for zoom */
+	cursor: pointer; /* Pointer cursor to indicate it's clickable */
+  }
+  
+  #zoomableImage.zoomed {
+	transform: scale(2); /* Scale image to 2 times its original size */
+  }
